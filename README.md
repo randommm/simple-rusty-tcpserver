@@ -1,5 +1,5 @@
-# Simple webserver in Rust
+# Simple TCP server in Rust
 
-With test client in Python
+A simple TCP server in Rust and a test client script in Python.
 
-Filter on Wireshark: `tcp.port == 20020`
+You can filter packets on Wireshark with `tcp.port == 20200`
