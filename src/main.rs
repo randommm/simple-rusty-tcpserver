@@ -4,7 +4,7 @@ use tokio::net::{TcpListener, TcpStream};
 
 #[tokio::main]
 async fn main() -> io::Result<()> {
-    let listener = TcpListener::bind("127.0.0.1:20200").await?;
+    let listener = TcpListener::bind("127.0.0.1:20202").await?;
 
     loop {
         println!("listening for clients...");
@@ -20,12 +20,12 @@ async fn main() -> io::Result<()> {
 
 async fn handle_connection(mut stream: TcpStream) {
     let mut buffer = [0; 1024];
-    stream.read(&mut buffer).await.unwrap_or_default();
+    let n = stream.read(&mut buffer).await.unwrap_or_default();
     let addr = stream.peer_addr().unwrap();
 
     println!(
         "Request: {} from {addr}",
-        String::from_utf8_lossy(&buffer[..])
+        String::from_utf8_lossy(&buffer[..n])
     );
 
     let response = format!("Hi, {addr}");

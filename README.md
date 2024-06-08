@@ -1,5 +1,9 @@
 # Simple TCP server in Rust
 
-A simple TCP server in Rust and a test client script in Python.
+This repo contains:
 
-You can filter packets on Wireshark with `tcp.port == 20200`
+* A simple TCP server in Rust.
+* A test client on Jupyter's Rust evcxr kernel.
+* A test client script in Python as an alternative.
+
+You can filter packets on Wireshark with `tcp.port == 20202`

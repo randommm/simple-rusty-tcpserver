@@ -1,6 +1,6 @@
 import socket
 
-address = ("127.0.0.1", 20200)
+address = ("127.0.0.1", 20202)
 s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 # s.setsockopt(socket.SOL_SOCKET, socket.SO_REUSEADDR, 1)
 # s.bind( ("127.0.0.2", 9190) )
